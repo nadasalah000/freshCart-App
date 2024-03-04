@@ -1,0 +1,26 @@
+:host{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-section{
+    padding-top: 80px;
+}
+
+.btn-up{ 
+   position: fixed;
+   bottom: 10px;
+   right: 10px;
+   z-index: 10;
+   width: 40px;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 12px;
+   background-color: #0aad0a;
+   border: unset;
+   color: #fff;
+   font-size: 25px;
+}

@@ -1,0 +1,60 @@
+<nav #navBar class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="">
+            <img src="./assets/images/freshcart-logo.svg" alt="fresh cart logo">
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active-link" routerLink="/home">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active-link" routerLink="/products">products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active-link" routerLink="/brands">brands</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active-link" routerLink="/categories">categories</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0 align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link position-relative" routerLink="/cart">
+                        <i class="fa-solid fa-cart-shopping fa-2x text-main"></i>
+                        <span class="badge bg-info position-absolute top-0 end-0"> {{cartNum}} </span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex gap-3 me-3">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link position-relative" routerLink="/whishlist">
+                        <i class="fa-solid fa-heart fa-2x text-warning"></i>
+                        <span class="badge bg-info position-absolute top-0 end-0"> {{heartNum}} </span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="icon fa-solid fa-user-tie fa-2x"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li role="button" routerLink="/forgotpassword" routerLinkActive="active-link"><a class="dropdown-item">Forgot Password</a></li>
+                    </ul>
+                  </li>
+                <li class="nav-item">
+                    <span (click)='signOut()' role="button"> signOut </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

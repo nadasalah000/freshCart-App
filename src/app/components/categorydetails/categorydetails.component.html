@@ -1,0 +1,14 @@
+<section *ngIf="categoryDetails._id" class="w-75 mx-auto rounded shadow bg-main-light p-3 my-2">
+  <div class="row g-4 align-items-center">
+    <div class="col-md-6">
+      <img class="w-100" [src]="categoryDetails.image" [alt]="categoryDetails.name">
+    </div>
+    <div class="col-md-6">
+      <h2>{{categoryDetails.name}}</h2>
+    </div>
+    <div>
+        <p class="text-main m-0 p-0">Creat: {{categoryDetails.createdAt}}</p>
+        <p class="text-main m-0 p-0">Update: {{categoryDetails.updatedAt}}</p>
+      </div>
+  </div>
+</section>

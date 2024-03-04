@@ -1,0 +1,37 @@
+<section class="w-75 mx-auto rounded shadow bg-main-light p-3 mb-3" *ngIf="cartDetails;else msg">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1 class="h2">Shop Cart</h1>
+        <button (click)="clear()" class="btn btn-sm btn-outline-danger">Clear Cart</button>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+        <p class="text-main">Total Price: {{cartDetails.totalCartPrice | currency : "EGP"}}</p>
+        <p class="text-main p-1 rounded">Type Of: {{cartNumber}}</p>
+    </div>
+    <div class="row border-top py-2" *ngFor="let item of cartDetails.products">
+        <div class="col-md-1">
+            <img class="w-100" [src]="item.product.imageCover" [alt]="item.product.title">
+        </div>
+        <div class="col-md-11 d-flex justify-content-between align-items-center">
+            <div>
+                <h3 class="h6">{{item.product.title}}</h3>
+                <p class="text-main small mb-0">Price: {{item.price | currency : "EGP"}}</p>
+                <button (click)="removeItem(item.product._id, btnRemove)" #btnRemove class="btn m-0 p-0 text-main"><i
+                        class="fa-solid fa-trash-can"></i> Remove</button>
+            </div>
+            <div>
+                <button (click)="changeCount(item.count -1, item.product._id,btn1,btn2)" #btn1
+                    class="btn btn-sm border-success">-</button>
+                <span class="mx-2">{{item.count}}</span>
+                <button (click)="changeCount(item.count +1, item.product._id, btn1, btn2)" #btn2
+                    class="btn btn-sm border-success">+</button>
+            </div>
+        </div>
+    </div>
+
+    <button [routerLink]="['/payment', cartDetails._id]" class="main-btn mt-3">Online Payment <img src="./assets/images/visa.svg" alt="visa logo"> </button>
+    
+</section>
+
+<ng-template #msg>
+    <h2 class="text-center fs-1 py-4 mt-4 bg-main p-2 rounded text-main-light mx-5 shadow">Your Cart Is Empty.....</h2>
+</ng-template>
